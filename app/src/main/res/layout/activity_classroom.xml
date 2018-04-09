@@ -4,12 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/main_classroom"
     tools:context="buckley.hallpass.ui.classroom.ClassroomActivity"
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/classroom_buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">

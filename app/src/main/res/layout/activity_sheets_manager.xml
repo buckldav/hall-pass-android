@@ -40,13 +40,11 @@
             android:layout_weight="1">
 
             <android.support.design.widget.TabItem
-                android:id="@+id/readTab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/readTab" />
 
             <android.support.design.widget.TabItem
-                android:id="@+id/writeTab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/writeTab" />

@@ -1,11 +1,10 @@
 <resources>
-    <dimen name="app_bar_height">180dp</dimen>
+    <!--General-->
     <dimen name="margin">16dp</dimen>
     <dimen name="text_margin">12dp</dimen>
 
+    <!--Main Activity-->
     <dimen name="header_1">28sp</dimen>
-    <dimen name="header_2">18sp</dimen>
-    <dimen name="image_student_size">84dp</dimen>
 
     <!--Student List-->
     <dimen name="student_pad">6dp</dimen>
