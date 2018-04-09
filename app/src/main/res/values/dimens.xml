@@ -1,0 +1,16 @@
+<resources>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="margin">16dp</dimen>
+    <dimen name="text_margin">12dp</dimen>
+
+    <dimen name="header_1">28sp</dimen>
+    <dimen name="header_2">18sp</dimen>
+    <dimen name="image_student_size">84dp</dimen>
+
+    <!--Student List-->
+    <dimen name="student_pad">6dp</dimen>
+    <dimen name="student_font_size">18dp</dimen>
+
+    <!--Sheets Manager-->
+    <dimen name="sheets_small_margin">8dp</dimen>
+</resources>

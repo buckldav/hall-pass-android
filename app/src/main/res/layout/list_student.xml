@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/list_student"
+    android:paddingRight="@dimen/student_pad"
+    android:paddingLeft="@dimen/student_pad">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/list_student_name"
+        android:text="@string/name_student_default"
+        android:textColor="@android:color/black"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:textSize="@dimen/student_font_size"
+        />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/toggle_text"
+        android:textOff="@string/toggle_off"
+        android:textOn="@string/toggle_on"
+        android:layout_alignParentRight="true"/>
+
+
+</RelativeLayout>

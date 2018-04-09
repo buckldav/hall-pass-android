@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="buckley.hallpass.ui.main.MainActivity"
+    android:layout_margin="@dimen/margin"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/main_classroom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/header_1"
+        android:textColor="@android:color/black"
+        android:text="@string/title_classroom"
+        android:layout_marginBottom="@dimen/text_margin"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/period1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/A1" />
+
+            <Button
+                android:id="@+id/period2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/A2" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/period3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/A3" />
+
+            <Button
+                android:id="@+id/period4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/A4" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/period5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/B1" />
+
+            <Button
+                android:id="@+id/period6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/B2" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/period7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/B3" />
+
+            <Button
+                android:id="@+id/period8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/B4" />
+        </TableRow>
+    </TableLayout>
+
+    <!--<TextView-->
+        <!--android:id="@+id/main_settings"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="@dimen/header_1"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:text="@string/settings"-->
+        <!--android:layout_marginTop="@dimen/text_margin"-->
+        <!--android:layout_marginBottom="@dimen/text_margin"/>-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/settings_1"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="@dimen/header_2"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:text="@string/settings_1" />-->
+
+    <!--<RadioGroup-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:checkedButton="@+id/radioButton1">-->
+
+        <!--<RadioButton-->
+            <!--android:id="@+id/radioButton1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="@string/settings_1_1" />-->
+
+        <!--<RadioButton-->
+            <!--android:id="@+id/radioButton2"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="@string/settings_1_2" />-->
+    <!--</RadioGroup>-->
+
+
+</LinearLayout>
