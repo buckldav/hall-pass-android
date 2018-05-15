@@ -151,7 +151,7 @@ public class ClassroomActivity extends AppCompatActivity
     private void addStudentDialog(Context context) {
         // Set up the input
         final EditText input = new EditText(context);
-        // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+        // Specify the type of input expected
         input.setInputType(InputType.TYPE_CLASS_TEXT);
 
         // Make the dialog
@@ -203,7 +203,7 @@ public class ClassroomActivity extends AppCompatActivity
     private void editStudentDialog(Context context, final Student student) {
         // Set up the input
         final EditText input = new EditText(context);
-        // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+        // Specify the type of input expected
         input.setInputType(InputType.TYPE_CLASS_TEXT);
         input.setText(student.getName());
 
