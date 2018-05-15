@@ -19,6 +19,12 @@
 
     <!--Student List, Classroom Activity-->
     <string name="add_student">Add Student</string>
+    <string name="edit_student">Edit Student</string>
+    <string name="OK">OK</string>
+    <string name="CANCEL">CANCEL</string>
+    <string name="REMOVE">REMOVE</string>
+    <string name="no_name_student">The student\'s name must be at least 1 character</string>
+
     <string name="button_getStudents">Load Students From Google Sheets</string>
     <string name="button_toSM">Sheets Manager</string>
     <string name="toggle_off">IN</string>

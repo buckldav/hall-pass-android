@@ -149,33 +149,50 @@ public class ClassroomActivity extends AppCompatActivity
      * @param context Where the Dialog is launched from
      */
     private void addStudentDialog(Context context) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Add Student");
-
         // Set up the input
         final EditText input = new EditText(context);
         // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
         input.setInputType(InputType.TYPE_CLASS_TEXT);
-        builder.setView(input);
 
-        // Set up the buttons
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        // Make the dialog
+        final AlertDialog dialog = new AlertDialog.Builder(context)
+                .setTitle(context.getString(R.string.add_student))
+                .setView(input)
+                .setPositiveButton(context.getString(R.string.OK), null) // OK listener is overridden below
+                .setNegativeButton(context.getString(R.string.CANCEL), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                })
+                .create();
+
+        // Set up the OK listener
+        // This way allows for input validation
+        dialog.setOnShowListener(new DialogInterface.OnShowListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Student student = new Student(input.getText().toString());
-                Model.getInstance().addStudent(classPeriod, student);
-                // Update list
-                startFragment();
+            public void onShow(DialogInterface dialogInterface) {
+                Button button = ((AlertDialog) dialog).getButton(AlertDialog.BUTTON_POSITIVE);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String name = input.getText().toString();
+                        if (!name.isEmpty()) {
+                            Student student = new Student(name);
+                            Model.getInstance().addStudent(classPeriod, student);
+                            // Update list
+                            startFragment();
+                            // Dismiss once everything is OK.
+                            dialog.dismiss();
+                        } else {
+                            Toast.makeText(getApplicationContext(), R.string.no_name_student, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
         });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
 
-        builder.show();
+        dialog.show();
     }
 
     /**
@@ -184,46 +201,63 @@ public class ClassroomActivity extends AppCompatActivity
      * @param student
      */
     private void editStudentDialog(Context context, final Student student) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Edit Student");
-
         // Set up the input
         final EditText input = new EditText(context);
         // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
         input.setInputType(InputType.TYPE_CLASS_TEXT);
         input.setText(student.getName());
-        builder.setView(input);
 
-        // Set up the buttons
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        // Make the dialog
+        final AlertDialog dialog = new AlertDialog.Builder(context)
+                .setTitle(context.getString(R.string.edit_student))
+                .setView(input)
+                .setPositiveButton(context.getString(R.string.OK), null) // OK listener is overridden below
+                .setNeutralButton("REMOVE", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        // Remove old student
+                        Model.getInstance().removeStudent(classPeriod, student);
+                        // Update list
+                        startFragment();
+                    }
+                })
+                .setNegativeButton(context.getString(R.string.CANCEL), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                })
+                .create();
+
+        // Set up the OK listener
+        // This way allows for input validation
+        dialog.setOnShowListener(new DialogInterface.OnShowListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // Remove old student
-                Model.getInstance().removeStudent(classPeriod, student);
-                // Add updated student
-                Student newStudent = new Student(input.getText().toString(), student.getStatus());
-                Model.getInstance().addStudent(classPeriod, newStudent);
-                // Update list
-                startFragment();
-            }
-        });
-        builder.setNeutralButton("REMOVE", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                // Remove old student
-                Model.getInstance().removeStudent(classPeriod, student);
-                // Update list
-                startFragment();
-            }
-        });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
+            public void onShow(DialogInterface dialogInterface) {
+                Button button = ((AlertDialog) dialog).getButton(AlertDialog.BUTTON_POSITIVE);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String name = input.getText().toString();
+                        if (!name.isEmpty()) {
+                            // Remove old student
+                            Model.getInstance().removeStudent(classPeriod, student);
+                            // Add updated student
+                            Student newStudent = new Student(name, student.getStatus());
+                            Model.getInstance().addStudent(classPeriod, newStudent);
+                            // Update list
+                            startFragment();
+                            // Dismiss once everything is OK.
+                            dialog.dismiss();
+                        } else {
+                            Toast.makeText(getApplicationContext(), R.string.no_name_student, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
         });
 
-        builder.show();
+        dialog.show();
     }
 
     /**
