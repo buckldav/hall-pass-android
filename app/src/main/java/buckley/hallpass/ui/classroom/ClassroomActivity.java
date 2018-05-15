@@ -145,7 +145,7 @@ public class ClassroomActivity extends AppCompatActivity
     }
 
     /**
-     * This adds a student strictly to the LOCAL TEMPORARY data.
+     * This adds a student strictly to the LOCAL DATA (not GoogleSheets).
      * @param context Where the Dialog is launched from
      */
     private void addStudentDialog(Context context) {
